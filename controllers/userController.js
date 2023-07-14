@@ -1,6 +1,6 @@
 // ObjectId() method for converting studentId string into an ObjectId for querying database
 const { ObjectId } = require('mongoose').Types;
-const { User, Course } = require('../models');
+const { User, Thought } = require('../models');
 
 module.exports = {
   // Get all Users
@@ -68,7 +68,7 @@ module.exports = {
     }
   },
 
-  // Add an assignment to a User
+  // Add an friend to a User
   async addFriend(req, res) {
     try {
       console.log('You are adding a friend');
