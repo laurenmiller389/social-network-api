@@ -43,4 +43,9 @@ const userSchema = new Schema(
 
 const User = model('user', userSchema);
 
+//make the friend count schema with a virtual for it's length
+userSchema.virtual('friendCount').get(function () {
+  return this.friends.length;
+})
+
 module.exports = User;
