@@ -76,3 +76,50 @@ module.exports = {
     }
   },
 };
+
+//API THOUGHT REACTIONS
+
+// POST request to create a reaction stored in a single thought's reactions array field
+app.post('/api/thoughts/:thoughtId/reactions', async (req, res) => {
+  try {
+    const { thoughtId } = req.params;
+    const { reaction } = req.body;
+
+    // Find the thought by its ID and push the reaction to the reactions array
+    const thought = await Thought.findOneAndUpdate(
+      { _id: thoughtId },
+      { $push: { reactions: reaction } },
+      { new: true }
+    );
+
+    if (!thought) {
+      return res.status(404).json({ message: 'No thought with that ID' });
+    }
+
+    res.json(thought);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// DELETE request to pull and remove a reaction by the reaction's reactionId
+app.delete('/api/thoughts/:thoughtId/reactions/:reactionId', async (req, res) => {
+  try {
+    const { thoughtId, reactionId } = req.params;
+
+    // Find the thought by its ID and pull the reaction by its reactionId
+    const thought = await Thought.findOneAndUpdate(
+      { _id: thoughtId },
+      { $pull: { reactions: { _id: reactionId } } },
+      { new: true }
+    );
+
+    if (!thought) {
+      return res.status(404).json({ message: 'No thought with that ID' });
+    }
+
+    res.json(thought);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
