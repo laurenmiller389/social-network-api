@@ -18,8 +18,9 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      //idk how to do this getter method for the timestamp...
-    },
+      get: function (v) {
+        return new Date(v).toLocaleString();
+      }
   },
   {
     toJSON: {

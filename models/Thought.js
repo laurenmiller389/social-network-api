@@ -11,7 +11,9 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now(),
-      //need that getter method
+      get: function (v) {
+        return new Date(v).toLocaleString();
+      }
     },
     username: {
       type: String,
