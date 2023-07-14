@@ -21,6 +21,7 @@ const reactionSchema = new Schema(
       get: function (v) {
         return new Date(v).toLocaleString();
       }
+    }
   },
   {
     toJSON: {
@@ -30,4 +31,4 @@ const reactionSchema = new Schema(
   }
 );
 
-module.exports = Reaction;
+module.exports = reactionSchema;
