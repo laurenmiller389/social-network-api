@@ -1,4 +1,4 @@
-const { Course, Student } = require('../models');
+const { Thought } = require('../models');
 
 module.exports = {
   // Get all courses
@@ -75,12 +75,12 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-};
+
 
 //API THOUGHT REACTIONS
 
 // POST request to create a reaction stored in a single thought's reactions array field
-app.post('/api/thoughts/:thoughtId/reactions', async (req, res) => {
+ async createReaction(req, res) {
   try {
     const { thoughtId } = req.params;
     const { reaction } = req.body;
@@ -100,10 +100,10 @@ app.post('/api/thoughts/:thoughtId/reactions', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-});
+},
 
 // DELETE request to pull and remove a reaction by the reaction's reactionId
-app.delete('/api/thoughts/:thoughtId/reactions/:reactionId', async (req, res) => {
+async (req, res){
   try {
     const { thoughtId, reactionId } = req.params;
 
@@ -122,4 +122,5 @@ app.delete('/api/thoughts/:thoughtId/reactions/:reactionId', async (req, res) =>
   } catch (err) {
     res.status(500).json(err);
   }
-});
+  }
+};
