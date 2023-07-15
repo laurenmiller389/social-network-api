@@ -103,7 +103,7 @@ module.exports = {
 },
 
 // DELETE request to pull and remove a reaction by the reaction's reactionId
-async (req, res){
+async deleteReaction(req, res) {
   try {
     const { thoughtId, reactionId } = req.params;
 
