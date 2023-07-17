@@ -18,11 +18,11 @@ This project requires installations of Node.js. Here's where you can download th
 
 ## Usage
 
-To get the application running, type 'node index' into your terminal and fill out the prompts in your command line to generate your readMe. You can find your completed readMe written to the file titled 'README.md' 
+To get the application running, type 'node index' into your terminal to start the server
 
 Here's a link to my demo: https://drive.google.com/file/d/17YDUmuMmldLLAZlZsca8SQ1G2RzPZCKi/view
 
-
+some of my routes don't currently work :(
 
 ![screenshot of the input](./screenshot.png)
 
