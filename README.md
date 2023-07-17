@@ -20,7 +20,9 @@ This project requires installations of Node.js. Here's where you can download th
 
 To get the application running, type 'node index' into your terminal and fill out the prompts in your command line to generate your readMe. You can find your completed readMe written to the file titled 'README.md' 
 
-Here's a link to my demo: file:///Users/laurenmiller/Downloads/Untitled_%20Jul%2016,%202023%2010_23%20PM%20(1).webm
+Here's a link to my demo: https://drive.google.com/file/d/17YDUmuMmldLLAZlZsca8SQ1G2RzPZCKi/view
+
+
 
 ![screenshot of the input](./screenshot.png)
 
